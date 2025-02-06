@@ -42,3 +42,25 @@ export function hamButton() {
         }
     });
 }
+
+export async function Search(id,callback){
+    const search = document.querySelector("#search");
+    const searchBtn = document.querySelector("#btn-search");
+    const message = document.querySelector("#results-message");
+    
+    searchBtn.addEventListener("click", () => {
+        const searchValue = search.value;  
+        if (searchValue !== ""){
+            //window.location.href = `${path}.html?search=${encodeURIComponent(searchValue)}`;
+            const htmlElement = document.getElementById(id);
+            console.log(htmlElement);
+            message.innerHTML = `Results for: <strong>${searchValue}</strong>`;
+            htmlElement.innerHTML = "";
+            
+            if(callback){
+                callback(searchValue);
+            }
+        }
+    });
+
+}
