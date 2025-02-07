@@ -20,6 +20,9 @@ export function detail(recipe){
             </ul>
             <h2>Instructions</h2>
             <p>${recipe.strInstructions}</p>
+            <h2>Sources</h2>
+            <a href="${recipe.strYoutube}" target="_blank">Youtube</a>
+            
             <button class="btn-add" id="add">Add recipe to diet</button>
         </div>
 

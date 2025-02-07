@@ -60,7 +60,7 @@ nav a{
     color: var(--white);
     text-decoration: none;
     transition: ease all .2s;
-
+    margin-top:1rem ;
 }
 
 nav a:hover{

@@ -34,19 +34,15 @@ export async function displayRecipes(data){
 export default class Recipe{
     async getData(text){
         const name = await searchBy(byName,text)
-        const ing = await searchBy(byIng,text)
         let data = []
         try{
-            name.forEach(element => {
-                if (element !== null){
-                    data.push(element)
-                }
-            });
-            ing.forEach(element => {
-                if (element !== null){
-                    data.push(element)
-                }
-            });
+            if (name!==null){
+                name.forEach(element => {
+                    if (element != null){
+                        data.push(element)
+                    }
+                });
+            }
             data.forEach(element => {
                 displayRecipes(element)
             });
