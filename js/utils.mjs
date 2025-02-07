@@ -35,12 +35,20 @@ export function hamButton() {
     hamButton.addEventListener("click", () => {
         nav.classList.toggle("open");
         hamButton.classList.toggle("open");
-        if(hamButton.classList.contains("open")) {
+        if (hamButton.classList.contains("open")) {
             hamButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>`;
         } else {
-            hamButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg>`
+            hamButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg>`;
         }
     });
+}
+
+export function getLocalStorage(key){
+    return JSON.parse(localStorage.getItem(key)) || [];
+}
+
+export function setLocalStorage(key, value){
+    localStorage.setItem(key, JSON.stringify(value));
 }
 
 export async function Search(id,callback){
@@ -53,8 +61,7 @@ export async function Search(id,callback){
         if (searchValue !== ""){
             //window.location.href = `${path}.html?search=${encodeURIComponent(searchValue)}`;
             const htmlElement = document.getElementById(id);
-            console.log(htmlElement);
-            message.innerHTML = `Results for: <strong>${searchValue}</strong>`;
+            message.innerHTML = `Results for: <strong>"${searchValue}"</strong>`;
             htmlElement.innerHTML = "";
             
             if(callback){
@@ -63,4 +70,28 @@ export async function Search(id,callback){
         }
     });
 
+    search.addEventListener("keyup", (e) => {
+        if (e.keyCode === 13){
+            searchBtn.click();
+        }
+    });
 }
+
+export  function modalModel(template,callback){
+    const modal = document.querySelector("#modal");
+    const close = document.createElement("span");
+    modal.innerHTML = "";
+    modal.innerHTML = template;
+
+    close.classList.add("close");
+    close.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="48px" fill="#000"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>`;
+    modal.appendChild(close);
+    if(callback){
+        callback();
+    }
+    modal.showModal();
+    close.addEventListener("click", () => {
+        modal.close();
+    });
+}
+
