@@ -95,3 +95,8 @@ export  function modalModel(template,callback){
     });
 }
 
+export function removeItem(key, index){
+    let storage = getLocalStorage(key)
+    storage.splice(index,1)
+    setLocalStorage(key,storage) 
+}

@@ -43,7 +43,7 @@ export class recipeDetail {
 
     addToDiet(){
         const btn = document.querySelector("#add")
-        const info = `${this.data.idMeal} - ${this.data.strMeal}`
+        const info = `${this.data.idMeal} - ${this.data.strMeal} - ${this.data.strYoutube}`
 
         btn.addEventListener("click", () => {
             const diet = getLocalStorage("diet")

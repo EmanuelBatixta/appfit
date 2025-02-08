@@ -202,6 +202,68 @@ dialog{
     animation: modalTransition 1s alternate;
 }
 
+dialog li{
+    list-style: none;
+    margin-top: 1rem;
+    align-items: start;
+}
+
+dialog h2, dialog h1{
+    color: var(--orange);
+    text-align: center;
+}
+
+.close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+dialog button{
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: ease all .2s;
+    font-size: 1.1rem;
+}
+
+dialog ul{
+    width: 100%;
+}
+
+dialog button:hover{
+    transform: scale(1.05);
+    color: var(--lightOrange);
+    transition: ease all .1s;
+}
+
+/* op -------------------------------------------- */
+.meal-list{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.remove{
+    position: absolute;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    display: none;
+    transition: all ease .2s;
+}
+
+.meal-list:hover .remove{
+    display: inline;
+}
+
 /* recipe ---------------------------------------- */
 
 .details{
@@ -214,50 +276,9 @@ dialog{
     transition: ease all .2s;
 }
 
-.details h2, .details h1{
-    color: var(--orange);
-    text-align: center;
-}
-
 .details img{
     width:100%;
     border-radius: 1rem;
-}
-
-.details ul{
-    width: 100%;
-}
-
-.details li{
-    list-style: none;
-    margin-top: 1rem;
-    align-items: start;
-}
-
-.details button{
-    background: var(--blue);
-    color: var(--white);
-    border: none;
-    padding: .5rem 1rem;
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: ease all .2s;
-    font-size: 1.1rem;
-}
-
-.details button:hover{
-    transform: scale(1.05);
-    color: var(--lightOrange);
-    transition: ease all .1s;
-}
-
-.close{
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    cursor: pointer;
 }
 
 /* end modal */
