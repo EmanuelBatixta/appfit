@@ -7,7 +7,6 @@ export async function searchBy(path, type) {
   const response = await fetch(`${path}${type}`);
   const resJson = await response.json();
   const data = resJson.meals;
-  console.log(data);
   return data;
 }
 
@@ -32,6 +31,7 @@ export async function displayRecipes(data) {
 
 export default class Recipe {
   async getData(text) {
+    const message = document.querySelector("#results-message");
     const name = await searchBy(byName, text);
     let data = [];
     try {
@@ -41,7 +41,10 @@ export default class Recipe {
             data.push(element);
           }
         });
+      } else {
+        message.innerHTML = `No results found for: <strong>"${text}"</strong>`;
       }
+
       data.forEach((element) => {
         displayRecipes(element);
       });

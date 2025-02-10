@@ -196,7 +196,7 @@ dialog{
     background: var(--white);
     border: none;
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 1rem;
     justify-content: center;
     align-items: center;
     animation: modalTransition 1s alternate;
@@ -263,6 +263,20 @@ dialog button:hover{
 .meal-list:hover .remove{
     display: inline;
 }
+
+.options ul{
+    margin-top: 1rem;
+    height: 105%;
+}
+
+#add-recipes{
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 100px var(--white);
+}
+
 
 /* recipe ---------------------------------------- */
 

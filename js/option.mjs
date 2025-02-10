@@ -19,8 +19,11 @@ function opTemplate() {
         <ul>
         ${diet.join(" ")}
         </ul>
+        <a href="recipes.html" target="_blank" id="add-recipes"><button>Add more</button></a>
     `;
 }
+
+
 
 export default class op{
 
