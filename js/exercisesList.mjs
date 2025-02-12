@@ -24,9 +24,9 @@ export async function displayExercices(data) {
   const name = document.createElement("h2");
   const inst = document.createElement("p");
   const info = document.createElement("p");
-  div.classList.add("exercise-div");
+  div.classList.add("data-div");
   name.textContent = data.name;
-  info.textContent = `${data.type} : ${data.difficulty}`;
+  info.innerHTML = `<strong>${data.type}</strong> : ${data.difficulty}`;
 
   div.appendChild(name);
   div.appendChild(info);

@@ -194,7 +194,6 @@ nav a:hover {
   width: 100%;
   border-radius: 1rem;
 }
-
 /* start modal ############################################################*/
 ::backdrop {
   background: rgba(0, 0, 0, 0.5);
@@ -255,12 +254,13 @@ dialog button:hover {
   transition: ease all 0.1s;
 }
 
-/* op -------------------------------------------- */
-.meal-list {
+.item-list {
   display: flex;
   align-items: center;
   margin-top: 1rem;
 }
+
+/* op -------------------------------------------- */
 
 .remove {
   position: absolute;
@@ -272,7 +272,7 @@ dialog button:hover {
   transition: all ease 0.2s;
 }
 
-.meal-list:hover .remove {
+.item-list:hover .remove {
   display: inline;
 }
 
@@ -281,7 +281,7 @@ dialog button:hover {
   height: 105%;
 }
 
-#add-recipes {
+#add-item {
   position: fixed;
   bottom: 30px;
   left: 50%;
