@@ -3,7 +3,7 @@ import { getLocalStorage, modalModel, setLocalStorage } from "./utils.mjs";
 // const training = document.querySelector("#tra-op");
 // const meal = document.querySelector("#meal-op");
 
-function opTemplate() {
+function mealTemplate() {
   const localStorage = getLocalStorage("diet");
   let diet = [];
   localStorage.forEach((i,index) => {
@@ -28,7 +28,7 @@ function opTemplate() {
 export default class op{
 
     display(){
-        const display = opTemplate()
+        const display = mealTemplate()
         modalModel(display)
         this.EventListenersRemove()
     }
