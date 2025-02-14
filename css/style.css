@@ -141,8 +141,12 @@ nav a:hover {
   transition: ease all 0.2s;
 }
 
+.type svg{
+  filter: drop-shadow(5px 5px 5px var(--grey));
+
+}
+
 .type:hover svg {
-  filter: drop-shadow(0 0 20px var(--lightBlue));
   transform: scale(1.1);
   transition: ease all 0.2s;
 }
@@ -353,6 +357,7 @@ footer {
     "copy copy copy";
   justify-items: center;
   gap: 0.5rem;
+  align-items: center;
 }
 
 #footer-logo {
@@ -403,5 +408,32 @@ footer img {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@media screen and (min-width: 700px) {
+  header {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  #header-nav {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  #header-nav a {
+    display: block;
+  }
+
+  #hamburguer-menu {
+    display: none;
+  }
+
+  .footer-box {
+    grid-template-areas:
+      "logo logo social"
+      "nav nav nav "
+      "copy copy copy";
   }
 }
