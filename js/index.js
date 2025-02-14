@@ -2,7 +2,7 @@ import { loadHeaderFooter } from "./utils.mjs";
 import op from "./option.mjs";
 
 loadHeaderFooter();
-const food = new op("meal", "meal");
+const food = new op("meal", "diet");
 const exercise = new op("exercise", "training");
 
 const meal = document.querySelector("#meal-op");

@@ -5,8 +5,6 @@ import { getLocalStorage, modalModel, setLocalStorage } from "./utils.mjs";
 
 function mealTemplate() {
   const localStorage = getLocalStorage("diet");
-  console.log(localStorage)
-
   let diet = [];
   localStorage.forEach((i, index) => {
     const item = `
@@ -15,8 +13,6 @@ function mealTemplate() {
         <span class="remove" data-index="${index}"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#EB2500"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></span>
     </div>`;
     diet.push(item);
-    console.log(diet)
-
   });
   return `
         <h1>Meals in your Diet</h1>
@@ -75,7 +71,7 @@ export default class op {
       e.addEventListener("click", (event) => {
         const element = event.target.closest(".remove");
         const index = parseInt(element.getAttribute("data-index"), 10);
-        this.removeItem(storage, index);
+        this.removeItem(this.storage, index);
         element.closest(".item-list").remove();
       });
     });

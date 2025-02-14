@@ -19,6 +19,17 @@
   --text: "Poppins", sans-serif;
 }
 
+::-webkit-scrollbar {
+  background: var(--grey);
+  width: 10px;
+  border-radius: 3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00c8eb;
+  border-radius: 3rem;
+}
+
 h1,
 h2,
 h3,
@@ -109,9 +120,9 @@ nav a:hover {
 }
 
 #main-info {
-    text-align: center;
-    margin: 2rem auto 0 auto;
-    color: var(--blue);
+  text-align: center;
+  margin: 2rem auto 0 auto;
+  color: var(--blue);
 }
 
 .choose {
@@ -202,7 +213,7 @@ nav a:hover {
 dialog {
   margin: auto;
   width: 70vh;
-  height: 100%;
+  max-height: 600px;
   background: var(--white);
   border: none;
   border-radius: 1rem;
@@ -224,6 +235,10 @@ dialog h1 {
   text-align: center;
 }
 
+dialog h1 {
+  margin-top: 2.5rem;
+}
+
 .close {
   position: absolute;
   top: 1rem;
@@ -242,10 +257,8 @@ dialog button {
   cursor: pointer;
   transition: ease all 0.2s;
   font-size: 1.1rem;
-}
-
-dialog ul {
-  width: 100%;
+  display: flex;
+  margin: 2rem auto 10px auto;
 }
 
 dialog button:hover {
@@ -254,10 +267,37 @@ dialog button:hover {
   transition: ease all 0.1s;
 }
 
+dialog ul {
+  width: 100%;
+  margin-top: 1rem;
+  min-height: 75px;
+  height: 300px;
+  overflow: auto;
+}
+
+dialog a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+dialog a:hover {
+  color: var(--lightBlue);
+}
+
+dialog a:visited {
+  color: var(--orange);
+}
+
 .item-list {
+  position: relative;
   display: flex;
   align-items: center;
+  justify-items: center;
   margin-top: 1rem;
+}
+
+.item-list a {
+  max-width: 80%;
 }
 
 /* op -------------------------------------------- */
@@ -265,28 +305,14 @@ dialog button:hover {
 .remove {
   position: absolute;
   right: 2rem;
-  display: flex;
   align-items: center;
   cursor: pointer;
-  display: none;
   transition: all ease 0.2s;
+  display: none;
 }
 
 .item-list:hover .remove {
-  display: inline;
-}
-
-.options ul {
-  margin-top: 1rem;
-  height: 105%;
-}
-
-#add-item {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0px 0px 100px var(--white);
+  display: flex;
 }
 
 /* recipe ---------------------------------------- */
@@ -315,6 +341,7 @@ footer {
   justify-content: center;
   padding: 1rem 0;
 }
+
 .footer-box {
   color: var(--white);
   text-align: center;
