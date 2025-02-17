@@ -20,14 +20,18 @@
 }
 
 ::-webkit-scrollbar {
-  background: var(--grey);
+  background: transparent;
   width: 10px;
-  border-radius: 3rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00c8eb;
-  border-radius: 3rem;
+  background: var(--lightBlue);
+  
+}
+
+::-webkit-scrollbar-corner, 
+::-webkit-scrollbar-track{
+  background: var(--);
 }
 
 h1,
@@ -141,9 +145,8 @@ nav a:hover {
   transition: ease all 0.2s;
 }
 
-.type svg{
+.type{
   filter: drop-shadow(5px 5px 5px var(--grey));
-
 }
 
 .type:hover svg {
@@ -273,11 +276,15 @@ dialog button:hover {
 
 dialog ul {
   width: 100%;
+}
+
+.options ul {
   margin-top: 1rem;
   min-height: 75px;
   height: 300px;
   overflow: auto;
 }
+
 
 dialog a {
   color: var(--blue);
@@ -429,11 +436,21 @@ footer img {
   #hamburguer-menu {
     display: none;
   }
+  #footer-logo,
+  #footer-nav,
+  #footer-social{
+    margin: 0 2rem;
+    padding: 0;
+  }
+
+  #footer-nav a{
+    margin: 0 ;
+  }
+
 
   .footer-box {
     grid-template-areas:
-      "logo logo social"
-      "nav nav nav "
+      "logo nav social"
       "copy copy copy";
   }
 }
