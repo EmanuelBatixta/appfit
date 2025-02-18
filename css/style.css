@@ -345,6 +345,14 @@ dialog a:visited {
 
 /* end modal */
 /* banner */
+.banner-index{
+  background-image: url("https://images.pexels.com/photos/6120219/pexels-photo-6120219.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 100px var(--black);
+  width: 100vw;
+  height: 300px;
+}
 .banner-training{
   background-image: url("https://images.pexels.com/photos/6740754/pexels-photo-6740754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-size: cover;
